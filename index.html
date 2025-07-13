@@ -1,307 +1,150 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
-    <meta charset="utf-8">
-
-    <title>詩マップ：Dead end - 川崎港廃油処理場</title>
-
-    <style>
-
-        html, body {
-
-            height: 100%;
-
-            margin: 0;
-
-            font-family: sans-serif;
-
-        }
-
-        #map {
-
-            height: 100%;
-
-            width: 100%;
-
-        }
-
-        #poemModal {
-
-            display: none;
-
-            position: fixed;
-
-            z-index: 10;
-
-            left: 0;
-
-            top: 0;
-
-            width: 100%;
-
-            height: 100%;
-
-            background-color: rgba(0,0,0,0.85);
-
-            color: white;
-
-            padding: 40px;
-
-            box-sizing: border-box;
-
-            overflow: auto;
-
-        }
-
-        #close {
-
-            position: absolute;
-
-            top: 20px;
-
-            right: 30px;
-
-            font-size: 28px;
-
-            cursor: pointer;
-
-        }
-
-    </style>
-
+  <meta charset="utf-8">
+  <title>詩マップ：Dead end - 川崎港廃油処理場</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: sans-serif;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+    #poemModal {
+      display: none;
+      position: fixed;
+      z-index: 10;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.85);
+      color: white;
+      padding: 40px;
+      box-sizing: border-box;
+      overflow: auto;
+    }
+    #close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 28px;
+      cursor: pointer;
+    }
+  </style>
 </head>
-
 <body>
+  <div id="map"></div>
 
-    <div id="map"></div>
-
-    <div id="poemModal">
-
-        <div id="close" onclick="document.getElementById('poemModal').style.display='none'">&times;</div>
-
-        <div id="poemModal">
-
+  <div id="poemModal">
     <div id="close" onclick="document.getElementById('poemModal').style.display='none'">&times;</div>
-
     <h2 id="modal-title"></h2>
-
     <p id="modal-body"></p>
+  </div>
 
-</div>
+  <script>
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 16,
+        center: { lat: 35.51054, lng: 139.77713 },
+        styles: [{ stylers: [{ visibility: "simplified" }, { hue: "#333" }, { saturation: -100 }] }]
+      });
 
-    <script>
+      const marker = new google.maps.Marker({
+        position: { lat: 35.51054, lng: 139.77713 },
+        map: map,
+        title: "Dead end - 川崎港廃油処理場"
+      });
 
-        function initMap() {
+      const marker2 = new google.maps.Marker({
+        position: { lat: 35.54359, lng: 139.72227 },
+        map: map,
+        title: "ぶらんこ"
+      });
 
-            const map = new google.maps.Map(document.getElementById('map'), {
-
-                zoom: 16,
-
-                center: { lat: 35.51054, lng: 139.77713 },
-
-                styles: [{ stylers: [{ visibility: "simplified" }, { hue: "#333" }, { saturation: -100 }] }]
-
-            });
-
-
-
-            const marker = new google.maps.Marker({
-
-                position: { lat: 35.51054, lng: 139.77713 },
-
-                map: map,
-
-                title: "Dead end - 川崎港廃油処理場"
-
-            });
-
-
-
-// ぶらんこ - 六郷水門近く
-
-const marker2 = new google.maps.Marker({
-
-  position: { lat: 35.54359, lng: 139.72227 },
-
-  map: map,
-
-  title: "ぶらんこ"
-
-});
-
-
-
-marker2.addListener("click", () => {
-
-  document.getElementById("modal-title").innerText = "ぶらんこ";
-
-  document.getElementById("modal-body").innerHTML = `雲は粘膜
-
-太陽やわく桃色の肌
-
-に包まれる錆びた
-
-工場の朝礼おはようございます
-
-七時くらいかなパン屋で
-
-あんドーナツとカレーパン
-
-揚げたてが食べられる休日
-
-海中道路の窓から湧きあがる
-
-背中からぶらんこ駆けあがるように
-
-技術に自然の新芽を譲った羽田川崎にも
-
-みどりの深呼吸が透き抜けます
-
-飛行機がありとあらゆる
-
-「上空を通過しました」
-
-顕微鏡でしか見たことがない
-
-緻密な工場の配管
-
-てらてら腹をすかせた海
-
-もっとも孤立できた一瞬の隙
-
-いまだれよりも幸せ
-
-それがわかちあえる喜びでないことを
-
-次の瞬間おもいきり吸い込む
-
-前に漕ぐ
-
-商店街の音楽が流れはじめ
-
-目を開くと落ちる
-
-さあ
-
+      marker2.addListener("click", () => {
+        document.getElementById("modal-title").innerText = "ぶらんこ";
+        document.getElementById("modal-body").innerHTML = `雲は粘膜<br>
+太陽やわく桃色の肌<br>
+に包まれる錆びた<br>
+工場の朝礼おはようございます<br>
+七時くらいかなパン屋で<br>
+あんドーナツとカレーパン<br>
+揚げたてが食べられる休日<br>
+海中道路の窓から湧きあがる<br>
+背中からぶらんこ駆けあがるように<br>
+技術に自然の新芽を譲った羽田川崎にも<br>
+みどりの深呼吸が透き抜けます<br>
+飛行機がありとあらゆる<br>
+「上空を通過しました」<br>
+顕微鏡でしか見たことがない<br>
+緻密な工場の配管<br>
+てらてら腹をすかせた海<br>
+もっとも孤立できた一瞬の隙<br>
+いまだれよりも幸せ<br>
+それがわかちあえる喜びでないことを<br>
+次の瞬間おもいきり吸い込む<br>
+前に漕ぐ<br>
+商店街の音楽が流れはじめ<br>
+目を開くと落ちる<br>
+さあ<br>
 川崎港廃油処理場、引き返す`;
+        document.getElementById("poemModal").style.display = "block";
+      });
 
-  document.getElementById("modal").style.display = "block";
-
-});
-
-
-
-            marker.addListener("click", () => {
-
-  document.getElementById("modal-title").innerText = "Dead end - 川崎港廃油処理場";
-
-  document.getElementById("modal-body").innerHTML = `集めた風を飾った部屋<br>
-
+      marker.addListener("click", () => {
+        document.getElementById("modal-title").innerText = "Dead end - 川崎港廃油処理場";
+        document.getElementById("modal-body").innerHTML = `集めた風を飾った部屋<br>
 ツリーのラメが反射する朝<br>
-
 光を浴びる<br>
-
 昨日までのこと<br>
-
 他人には救われないとわかってから<br>
-
 心拍が勇んでいる<br>
-
 私には私の言葉しかないQ.E.D.<br>
-
 屋根までのぼり消える気晴らし<br>
-
 なにかの間違いで家を出る<br>
-
 自転車やひとりごと<br>
-
 ありとあらゆる羽根に乗り<br>
-
 　羽田沖にはいろいろな青があって<br>
-
 　ジーンズと風の塔も<br>
-
 　防波堤を越え繋がる<br>
-
 ほんとうの願いすら<br>
-
 なかったことにできるくらい澄んでいる街は<br>
-
 同時に私の姿を浮かばせて<br>
-
 わからなくなる<br>
-
 近頃の海は考えすぎて<br>
-
 きれいであることを忘れている<br>
-
 猫が毛づくろいをする<br>
-
 川崎港廃油処理場ゲート<br>
-
 警告、監視中、通報、懲役<br>
-
 力ばかり主張する場所に<br>
-
 トラックが止まり<br>
-
 （靴の擦れる音）<br>
-
 二人組の兄ちゃんが<br>
-
 割り箸でごはんを分け与える<br>
-
 船や工場、防災無線<br>
-
 錆びたフェンスと有刺鉄線<br>
-
 無機質なコンクリートの道の傍ら<br>
-
 風にはためく海と雑草は<br>
-
 いつまでも飽きなくて<br>
-
 飽きるのが怖くなる<br>
-
 私の髪や袖口も<br>
-
 君らのようになりたがり揺れる<br>
-
 物事はすべて終わりがなければと<br>
-
 月日はいつでも私の手を<br>
-
 強く握ってうちへと帰すから<br>
-
 あたたかいうちに離れようそして<br>
-
 何度でも来よう<br>
-
 この行き止まりに<br>
-
 うまくいくような兆しもないが<br>
-
 救われなくたって生きるよ`;
-
-  document.getElementById("poemModal").style.display = "block";
-
-});
-
-
-
-        }
-
-    </script>
-
-    <script async
-
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBql7HndASAAMITr_WRSZanSMxeqeaQzls&callback=initMap">
-
-    </script>
-
+        document.getElementById("poemModal").style.display = "block";
+      });
+    }
+  </script>
+  <script async src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY_HERE&callback=initMap"></script>
 </body>
-
 </html>
