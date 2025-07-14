@@ -1,150 +1,179 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
   <title>詩マップ：Dead end - 川崎港廃油処理場</title>
-  <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: sans-serif;
-    }
-    #map {
-      height: 100%;
-      width: 100%;
-    }
-    #poemModal {
-      display: none;
-      position: fixed;
-      z-index: 10;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0,0,0,0.85);
-      color: white;
-      padding: 40px;
-      box-sizing: border-box;
-      overflow: auto;
-    }
-    #close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 28px;
-      cursor: pointer;
-    }
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Hiragino Sans'; color: #000000; -webkit-text-stroke: #000000; min-height: 18.0px}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Hiragino Sans'; color: #000000; -webkit-text-stroke: #000000}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px 'Hiragino Sans'}
+    span.s1 {font-kerning: none}
+    span.s2 {font: 13.0px 'Hiragino Sans'; color: #000000; -webkit-text-stroke: 0px #000000}
   </style>
 </head>
 <body>
-  <div id="map"></div>
-
-  <div id="poemModal">
-    <div id="close" onclick="document.getElementById('poemModal').style.display='none'">&times;</div>
-    <h2 id="modal-title"></h2>
-    <p id="modal-body"></p>
-  </div>
-
-  <script>
-    function initMap() {
-      const map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 16,
-        center: { lat: 35.51054, lng: 139.77713 },
-        styles: [{ stylers: [{ visibility: "simplified" }, { hue: "#333" }, { saturation: -100 }] }]
-      });
-
-      const marker = new google.maps.Marker({
-        position: { lat: 35.51054, lng: 139.77713 },
-        map: map,
-        title: "Dead end - 川崎港廃油処理場"
-      });
-
-      const marker2 = new google.maps.Marker({
-        position: { lat: 35.54359, lng: 139.72227 },
-        map: map,
-        title: "ぶらんこ"
-      });
-
-      marker2.addListener("click", () => {
-        document.getElementById("modal-title").innerText = "ぶらんこ";
-        document.getElementById("modal-body").innerHTML = `雲は粘膜<br>
-太陽やわく桃色の肌<br>
-に包まれる錆びた<br>
-工場の朝礼おはようございます<br>
-七時くらいかなパン屋で<br>
-あんドーナツとカレーパン<br>
-揚げたてが食べられる休日<br>
-海中道路の窓から湧きあがる<br>
-背中からぶらんこ駆けあがるように<br>
-技術に自然の新芽を譲った羽田川崎にも<br>
-みどりの深呼吸が透き抜けます<br>
-飛行機がありとあらゆる<br>
-「上空を通過しました」<br>
-顕微鏡でしか見たことがない<br>
-緻密な工場の配管<br>
-てらてら腹をすかせた海<br>
-もっとも孤立できた一瞬の隙<br>
-いまだれよりも幸せ<br>
-それがわかちあえる喜びでないことを<br>
-次の瞬間おもいきり吸い込む<br>
-前に漕ぐ<br>
-商店街の音楽が流れはじめ<br>
-目を開くと落ちる<br>
-さあ<br>
-川崎港廃油処理場、引き返す`;
-        document.getElementById("poemModal").style.display = "block";
-      });
-
-      marker.addListener("click", () => {
-        document.getElementById("modal-title").innerText = "Dead end - 川崎港廃油処理場";
-        document.getElementById("modal-body").innerHTML = `集めた風を飾った部屋<br>
-ツリーのラメが反射する朝<br>
-光を浴びる<br>
-昨日までのこと<br>
-他人には救われないとわかってから<br>
-心拍が勇んでいる<br>
-私には私の言葉しかないQ.E.D.<br>
-屋根までのぼり消える気晴らし<br>
-なにかの間違いで家を出る<br>
-自転車やひとりごと<br>
-ありとあらゆる羽根に乗り<br>
-　羽田沖にはいろいろな青があって<br>
-　ジーンズと風の塔も<br>
-　防波堤を越え繋がる<br>
-ほんとうの願いすら<br>
-なかったことにできるくらい澄んでいる街は<br>
-同時に私の姿を浮かばせて<br>
-わからなくなる<br>
-近頃の海は考えすぎて<br>
-きれいであることを忘れている<br>
-猫が毛づくろいをする<br>
-川崎港廃油処理場ゲート<br>
-警告、監視中、通報、懲役<br>
-力ばかり主張する場所に<br>
-トラックが止まり<br>
-（靴の擦れる音）<br>
-二人組の兄ちゃんが<br>
-割り箸でごはんを分け与える<br>
-船や工場、防災無線<br>
-錆びたフェンスと有刺鉄線<br>
-無機質なコンクリートの道の傍ら<br>
-風にはためく海と雑草は<br>
-いつまでも飽きなくて<br>
-飽きるのが怖くなる<br>
-私の髪や袖口も<br>
-君らのようになりたがり揺れる<br>
-物事はすべて終わりがなければと<br>
-月日はいつでも私の手を<br>
-強く握ってうちへと帰すから<br>
-あたたかいうちに離れようそして<br>
-何度でも来よう<br>
-この行き止まりに<br>
-うまくいくような兆しもないが<br>
-救われなくたって生きるよ`;
-        document.getElementById("poemModal").style.display = "block";
-      });
-    }
-  </script>
-  <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBql7HndASAAMITr_WRSZanSMxeqeaQzls&callback=initMap"></script>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p2"><span class="s1">&lt;html&gt;</span></p>
+<p class="p2"><span class="s1">&lt;head&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;meta charset="utf-8"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;title&gt;詩マップ&lt;/title&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;style&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>html, body {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>height: 100%;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>margin: 0;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-family: sans-serif;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>#map {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>height: 100%;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>width: 100%;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>#poemModal {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>display: none;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>position: fixed;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>z-index: 10;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>left: 0;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>top: 0;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>width: 100%;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>height: 100%;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>background-color: rgba(0,0,0,0.85);</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>color: white;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>padding: 40px;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>overflow: auto;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>#close {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>position: absolute;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>top: 20px;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>right: 30px;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>font-size: 28px;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>cursor: pointer;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p2"><span class="s1">&lt;body&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="map"&gt;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div id="poemModal"&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;div id="close" onclick="document.getElementById('poemModal').style.display='none'"&gt;&amp;times;&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h2 id="modal-title"&gt;&lt;/h2&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>&lt;p id="modal-body"&gt;&lt;/p&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>let map;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>function initMap() {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">           </span>const neutralCenter = { lat: 35.5270, lng: 139.7500 };</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>map = new google.maps.Map(document.getElementById('map'), {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>zoom: 14,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>center: neutralCenter,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>styles: [{ stylers: [{ visibility: "simplified" }, { hue: "#333" }, { saturation: -100 }] }]</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>const spots = [</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>title: "Dead end - 川崎港廃油処理場",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>lat: 35.51054,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>lng: 139.77713,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>poem: `集めた風を飾った部屋&lt;br&gt;</span></p>
+<p class="p3">ツリーのラメが反射する朝&lt;br&gt;</p>
+<p class="p3">光を浴びる&lt;br&gt;</p>
+<p class="p3">昨日までのこと&lt;br&gt;</p>
+<p class="p3">他人には救われないとわかってから&lt;br&gt;</p>
+<p class="p3">心拍が勇んでいる&lt;br&gt;</p>
+<p class="p3">私には私の言葉しかないQ.E.D.&lt;br&gt;</p>
+<p class="p3">屋根までのぼり消える気晴らし&lt;br&gt;</p>
+<p class="p3">なにかの間違いで家を出る&lt;br&gt;</p>
+<p class="p3">自転車やひとりごと&lt;br&gt;</p>
+<p class="p3">ありとあらゆる羽根に乗り&lt;br&gt;</p>
+<p class="p3">　羽田沖にはいろいろな青があって&lt;br&gt;</p>
+<p class="p3">　ジーンズと風の塔も&lt;br&gt;</p>
+<p class="p3">　防波堤を越え繋がる&lt;br&gt;</p>
+<p class="p3">ほんとうの願いすら&lt;br&gt;</p>
+<p class="p3">なかったことにできるくらい澄んでいる街は&lt;br&gt;</p>
+<p class="p3">同時に私の姿を浮かばせて&lt;br&gt;</p>
+<p class="p3">わからなくなる&lt;br&gt;</p>
+<p class="p3">近頃の海は考えすぎて&lt;br&gt;</p>
+<p class="p3">きれいであることを忘れている&lt;br&gt;</p>
+<p class="p3">猫が毛づくろいをする&lt;br&gt;</p>
+<p class="p3">川崎港廃油処理場ゲート&lt;br&gt;</p>
+<p class="p3">警告、監視中、通報、懲役&lt;br&gt;</p>
+<p class="p3">力ばかり主張する場所に&lt;br&gt;</p>
+<p class="p3">トラックが止まり&lt;br&gt;</p>
+<p class="p3">（靴の擦れる音）&lt;br&gt;</p>
+<p class="p3">二人組の兄ちゃんが&lt;br&gt;</p>
+<p class="p3">割り箸でごはんを分け与える&lt;br&gt;</p>
+<p class="p3">船や工場、防災無線&lt;br&gt;</p>
+<p class="p3">錆びたフェンスと有刺鉄線&lt;br&gt;</p>
+<p class="p3">無機質なコンクリートの道の傍ら&lt;br&gt;</p>
+<p class="p3">風にはためく海と雑草は&lt;br&gt;</p>
+<p class="p3">いつまでも飽きなくて&lt;br&gt;</p>
+<p class="p3">飽きるのが怖くなる&lt;br&gt;</p>
+<p class="p3">私の髪や袖口も&lt;br&gt;</p>
+<p class="p3">君らのようになりたがり揺れる&lt;br&gt;</p>
+<p class="p3">物事はすべて終わりがなければと&lt;br&gt;</p>
+<p class="p3">月日はいつでも私の手を&lt;br&gt;</p>
+<p class="p3">強く握ってうちへと帰すから&lt;br&gt;</p>
+<p class="p3">あたたかいうちに離れようそして&lt;br&gt;</p>
+<p class="p3">何度でも来よう&lt;br&gt;</p>
+<p class="p3">この行き止まりに&lt;br&gt;</p>
+<p class="p3">うまくいくような兆しもないが&lt;br&gt;</p>
+<p class="p3">救われなくたって生きるよ`</p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>},</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>{</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>title: "ぶらんこ",</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>lat: 35.54359,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>lng: 139.72227,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>poem: `雲は粘膜&lt;br&gt;</span></p>
+<p class="p3">太陽やわく桃色の肌&lt;br&gt;</p>
+<p class="p3">に包まれる錆びた&lt;br&gt;</p>
+<p class="p3">工場の朝礼おはようございます&lt;br&gt;</p>
+<p class="p3">七時くらいかなパン屋で&lt;br&gt;</p>
+<p class="p3">あんドーナツとカレーパン&lt;br&gt;</p>
+<p class="p3">揚げたてが食べられる休日&lt;br&gt;</p>
+<p class="p3">海中道路の窓から湧きあがる&lt;br&gt;</p>
+<p class="p3">背中からぶらんこ駆けあがるように&lt;br&gt;</p>
+<p class="p3">技術に自然の新芽を譲った羽田川崎にも&lt;br&gt;</p>
+<p class="p3">みどりの深呼吸が透き抜けます&lt;br&gt;</p>
+<p class="p3">飛行機がありとあらゆる&lt;br&gt;</p>
+<p class="p3">「上空を通過しました」&lt;br&gt;</p>
+<p class="p3">顕微鏡でしか見たことがない&lt;br&gt;</p>
+<p class="p3">緻密な工場の配管&lt;br&gt;</p>
+<p class="p3">てらてら腹をすかせた海&lt;br&gt;</p>
+<p class="p3">もっとも孤立できた一瞬の隙&lt;br&gt;</p>
+<p class="p3">いまだれよりも幸せ&lt;br&gt;</p>
+<p class="p3">それがわかちあえる喜びでないことを&lt;br&gt;</p>
+<p class="p3">次の瞬間おもいきり吸い込む&lt;br&gt;</p>
+<p class="p3">前に漕ぐ&lt;br&gt;</p>
+<p class="p3">商店街の音楽が流れはじめ&lt;br&gt;</p>
+<p class="p3">目を開くと落ちる&lt;br&gt;</p>
+<p class="p3">さあ&lt;br&gt;</p>
+<p class="p3">川崎港廃油処理場、引き返す`</p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>];</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>spots.forEach(spot =&gt; {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>const marker = new google.maps.Marker({</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>position: { lat: spot.lat, lng: spot.lng },</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>map,</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>title: spot.title</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>marker.addListener("click", () =&gt; {</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>document.getElementById("modal-title").innerText = spot.title;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>document.getElementById("modal-body").innerHTML = spot.poem;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">          </span>document.getElementById("poemModal").style.display = "block";</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">        </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">      </span>});</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">    </span>}</span></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</span></p>
+<p class="p1"><span class="s1"></span><br></p>
+<p class="p2"><span class="s1"><span class="Apple-converted-space">  </span>&lt;script async src="https://maps.googleapis.com/maps/api/js?key=</span><span class="s2">AIzaSyBql7HndASAAMITr_WRSZanSMxeqeaQzls</span><span class="s1">&amp;callback=initMap"&gt;&lt;/script&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p2"><span class="s1">&lt;/html&gt;</span></p>
 </body>
 </html>
